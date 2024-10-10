@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --yellow: #ffcd11;
+        --black: #000;
+        --white: #ffff;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        font-size: 1.8rem;
+      }
+
+      main {
+        min-height: 100dvh;
+        width: 100dvw;
+        max-width: 144rem;
+        padding: 2rem;
+
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cards {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+
+      .card {
+        padding: 1rem;
+        border: 1px solid #000;
+        text-align: center;
+        position: relative;
+        border-radius: 9px;
+        overflow: hidden;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s ease-in-out all;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card-preview {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        padding: 2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        backdrop-filter: blur(5px);
+        background-color: #00000075;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease-in-out all;
+        color: var(--white);
+      }
+
+      .card:hover .card-preview {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      a {
+        color: var(--black);
+        background-color: var(--yellow);
+        padding: 1rem 2rem;
+        border-radius: 9px;
+        text-decoration: none;
+        display: inline-block;
+        justify-content: center;
+      }
+
+      @media screen and (max-width: 1050px) {
+        .cards {
+          grid-template-columns: 1fr;
+          justify-items: center;
+        }
+        .card {
+          max-width: 40rem;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="cards">
+        <div class="card">
+          <h1>Website 1</h1>
+          <div class="card-preview">
+            <h2>Website 1</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptas, vitae.
+            </p>
+
+            <a href="#"> Visit Website</a>
+          </div>
+        </div>
+        <div class="card">
+          <h1>Website 1</h1>
+          <div class="card-preview">
+            <h2>Website 1</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptas, vitae.
+            </p>
+
+            <a href="#"> Visit Website</a>
+          </div>
+        </div>
+        <div class="card">
+          <h1>Website 1</h1>
+          <div class="card-preview">
+            <h2>Website 1</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptas, vitae.
+            </p>
+
+            <a href="#"> Visit Website</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
